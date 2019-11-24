@@ -32,7 +32,6 @@ public class EmployeeController {
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public ModelAndView addEmployee(@ModelAttribute("command")  EmployeeBean employeeBean,
 			BindingResult result) {
-		System.out.println(employeeBean.getName());
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("employees",  prepareListofBean(employeeService.listEmployeess()));
 		return new ModelAndView("addEmployee", model);
